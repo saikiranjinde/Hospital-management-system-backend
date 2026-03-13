@@ -284,16 +284,9 @@ Symptoms: "${problem}"
 RULES: ONLY home remedies. NO medicines, drugs, or supplements.
 
 **🏠 Home Remedies for Temporary Relief:**
-• (4-5 specific home remedies)
-
-**🛁 Comfort Measures:**
-• (2-3 comfort tips)
-
-**⚠️ Seek Emergency Help If:**
-• (2-3 warning signs)
-
+• (2-3 specific home remedies) suggest only in simple words and in short don't give them a long answer 
 **💚 From MediCare+:**
-(One warm sentence about their appointment)`;
+(One warm sentence about their appointment in short)`;
 
     const suggestion = await callGemini(apiKey, prompt);
     const { data: latest } = await supabase.from("bookings").select("id").eq("user_id", req.user.id).order("created_at", { ascending: false }).limit(1).single();
