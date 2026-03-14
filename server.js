@@ -198,7 +198,11 @@ async function sendEmail(to, subject, htmlBody, bookingId, type) {
     return { error: "nodemailer not installed" };
   }
 
-  const transporter = nodemailer.createTransport({ service: "gmail", auth: { user, pass } });
+  const transporter = nodemailer.createTransport({ service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: { user, pass } });
   try {
     const info = await transporter.sendMail({
       from: `"MediCare+ Hospital" <${user}>`,
