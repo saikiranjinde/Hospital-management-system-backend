@@ -758,13 +758,12 @@ app.post("/api/ai/suggest", auth, async (req, res) => {
 Patient: ${patient_name||"Patient"}, Age: ${patient_age||"Unknown"}
 Symptoms: "${problem}"
 
+Analyze the problem and tell them what is are the symptomps and how they get these disease or health issues and also tell which problem it is.
+
 STRICT RULES: ONLY home remedies and natural relief. NO medicines, drugs, or supplements of any kind.
 
 **🏠 Home Remedies for Temporary Relief:**
 • (List 4-6 specific, practical home remedies tailored to these exact symptoms)
-
-**🛁 Comfort Measures:**
-• (2-3 immediate comfort tips)
 
 **⚠️ Seek Emergency Help If:**
 • (2-3 red flag warning signs specific to these symptoms)
@@ -772,7 +771,9 @@ STRICT RULES: ONLY home remedies and natural relief. NO medicines, drugs, or sup
 **💚 From MediCare+:**
 (One warm, encouraging sentence about their upcoming appointment)
 
-Be specific, warm, and practical. No medicines.`;
+Be specific, warm, and practical. No medicines.
+and aslo give short and understandable remedies and explanation`;
+
 
     let suggestion, source = "gemini-2.5-flash";
     try {
